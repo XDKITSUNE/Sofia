@@ -1,9 +1,9 @@
 import discord
+import os
 from discord.ext import commands
 
 # Define the intents
-intents = discord.Intents.default()
-intents.all()
+intents = discord.Intents.all()
 # Create a bot instance with a command prefix
 bot = commands.Bot(command_prefix='!', intents=intents)
 
@@ -19,4 +19,5 @@ async def hello(ctx):
 
 # Run the bot with your token
 # Replace 'YOUR_BOT_TOKEN' with your actual bot token
-bot.run('MTIwNjM2ODQ5MjM4MzYzNzU4NQ.Gur7Rj.hGhScj2jVBibC0wZayCcxNZG0QLiZRM0mnxsf4')
+my_secret = os.environ['Token']
+bot.run(my_secret)
